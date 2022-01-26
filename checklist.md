@@ -1,28 +1,101 @@
-| | | | | | | | |
-|-|-|-|-|-|-|-|-|
-|ID|Priority|Requiment|Modul|Summary|STR|Exp Result|Bug|
-|T1|Smoke|R1|User registration|User registration by email|1. Open the site https://aliexpress.ru/|https://aliexpress.ru/ opens| |
-| | | | | |2. Enter the email address|The email address is displayed in the field| |
-| | | | | |3. Wait for the confirmation letter in an email |Corfirmation letter comes to email| |
-| | | | | |4. Tap the confirmation link in an email|Successful confirmation notification appears| |
-| | | | | | | | |
-|T2|Smoke|R2|User registration|User registration by phone number|1. Open the site https://aliexpress.ru/|https://aliexpress.ru/ opens| |
-| | | | | |2. Enter the phone number|The phone number is displayed in the field| |
-| | | | | |3. Wait for the SMS code|SMS code comes to the phone| |
-| | | | | |4. Еnter the code in the appeared field|Code is displayed| |
-| | | | | |5. Press the button 'register'|Successful registration notification appears| |
-| | | | | | | | |
-|T3|Smoke|R3|Login |Login by email|1. Open the site https://aliexpress.ru/|https://aliexpress.ru/ opens| |
-| | | | | |2. Enter registered email and password|Email and password are displayed in the field| |
-| | | | | |3. Press the button 'Log in'|Access to personal account is open| |
-| | | | | | | | |
-|T4|Smoke|R4|Search |Search for 'socks'|1. Open the site https://aliexpress.ru/|https://aliexpress.ru/ opens| |
-| | | | | |2. Login|Access to personal account is open| |
-| | | | | |3. Activate search bar|The search bar is active| |
-| | | | | |4. Write the word 'socks'|Word 'socks' is displayed| |
-| | | | | |5. Click on the search icon|The list of socks is displayed| |
-| | | | | | | | |
-|T5|Smoke|R5|Add to cart|Add to cart 2 pcs of product 'socks'|1. Open the first product by searching 'socks'|Product page opens| |
-| | | | | |3. Choose size and color|Selected characteristics are circled| |
-| | | | | |2. Choose quantity: 2|Quantity: 2 is displayed| |
-| | | | | |3. Press the button 'add to cart'|Notification 'This product was added to the cart...' appears| |
+| | | | |
+|-|-|-|-|
+| | | | |
+| |Build| |1.0|
+| |Environment| |Windows 10|
+| |Test date| |01/26/2022|
+| |Tester| |Gerayeva A.|
+| |Test type|Cheking|Result|
+| |User Registration via email| | |
+| |Smoke|valid email| |
+| |CP|invalid email| |
+| |CP|already registered email| |
+| |CP|valid email and invalid password| |
+| |CP|invalid email and valid password| |
+| |CP|email without '@'| |
+| |CP|with wrong server domain name | |
+| |CP|email with 'space'| |
+| |CP|empty value| |
+| |CP|password: 5 characters| |
+| |CP|password: 6 characters| |
+| |CP|password: 19 characters| |
+| |CP|password: 20 characters| |
+| |CP|password: 21 characters| |
+| |CP|password: only numbers| |
+| |CP|password: only letters| |
+| |CP|password: only signs| |
+| |CP|password: only special characters| |
+| |User Registration via phone number| | |
+| |Smoke|valid phone number| |
+| |CP|invalid phone number| |
+| |CP|with wrong country code| |
+| |CP|without country code| |
+| |CP|already registered phone number| |
+| |CP|empty value| |
+| |CP|number with country code| |
+| |CP|letters instead of numbers| |
+| |CP|use space in phone number form| |
+| |User Registration via social networks| | |
+| |CP|VK: not existing account| |
+| |Smoke|VK: existing account| |
+| |CP|VK: use function 'forgot your password?' | |
+| |CP|VK: valid login and invalid password| |
+| |CP|VK: invalid login and valid password| |
+| |CP|VK: empty value| |
+| |CP|OK: not existing account| |
+| |Smoke|OK: existing account| |
+| |CP|OK: use function 'forgot your password?' | |
+| |CP|OK: valid login and invalid password| |
+| |CP|OK: invalid login and valid password| |
+| |CP|OK: empty data| |
+| |Smoke, CP|FB, GMAIL, TWITTER, MAIL….| |
+| |Login| | |
+| |Smoke|with valid data| |
+| |CP|with invalid data| |
+| |CP|valid email| |
+| |CP|invalid email| |
+| |CP|already registered email| |
+| |CP|valid email and invalid password| |
+| |CP|invalid email and valid password| |
+| |CP|email without '@'| |
+| |CP|with wrong server domain name | |
+| |CP|email with 'space'| |
+| |CP|empty value| |
+| |Product search| | |
+| |Smoke|any english word | |
+| |CP|empty value| |
+| |CP|long text| |
+| |CP|with space| |
+| |CP| a long text| |
+| |CP|/max length| |
+| |CP|/max length – 1| |
+| |CP|/max length + 1| |
+| |CP|space at the beginning| |
+| |CP|space at the middle| |
+| |CP|space at the end| |
+| |CP|all characters are spaces| |
+| |CP|non-latin language data | |
+| |Cart| | |
+| |Smoke|add | |
+| |Smoke|delete| |
+| |CP|change quantity| |
+| |CP|select all | |
+| |Checkout page| | |
+| |CP|apply coupon / promo code| |
+| |CP|change payment method| |
+| |CP|add / select another delivery address| |
+| |CP|increase / decrease order quantity| |
+| |EXT|add a comment to the order| |
+| |Personal profile editing | | |
+| |CP|photo: add, change, delete| |
+| |CP|change the email adress| |
+| |CP|change the password| |
+| |CP|set security question| |
+| |CP|connect / disconnect social networks| |
+| |Non-functional | | |
+| |CP|cross browser| |
+| |CP|cross platform| |
+| |CP|process time| |
+| |CP|stress testing| |
+| |CP|UI/ GUI| |
+| |CP|localization| |
